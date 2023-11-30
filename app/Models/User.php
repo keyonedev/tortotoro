@@ -36,6 +36,10 @@ class User extends Authenticatable implements JWTSubject
         return $this->belongsTo(Role::class);
     }
 
+    public function workShift() {
+        return $this->belongsTo(WorkShift::class);
+    }
+
     public function getJWTIdentifier()
     {
         return $this->getKey();

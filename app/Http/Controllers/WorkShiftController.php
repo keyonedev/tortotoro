@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\WorkShiftRequest;
+use App\Http\Requests\WorkShiftUserRequest;
 use App\Services\WorkShiftService;
 use Illuminate\Http\Request;
 
@@ -19,5 +20,13 @@ class WorkShiftController extends Controller {
 
     public function close(int $id) {
         return $this->service->close($id);
+    }
+
+    public function user(WorkShiftUserRequest $request, int $id) {
+        return $this->service->user($request, $id);
+    }
+
+    public function orders(int $id) {
+        return $this->service->orders($id);
     }
 }
