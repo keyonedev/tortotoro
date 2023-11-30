@@ -21,7 +21,9 @@ return new class extends Migration
             $table->string('password');
             $table->string('status')->nullable();
             $table->string('photo_file')->nullable();
+
             $table->unsignedBigInteger('role_id');
+            $table->unsignedBigInteger('work_shift_id')->nullable();
 
             $table->timestamps();
         });
